@@ -1,6 +1,110 @@
+/* Define a custom accent color and make it available everywhere */
+:root {
+  --color-accent: oklch(65% 50% 0);
+}
+
+/* Base body styling with constrained and centered content */
 body {
-    /* Set line height to 1.5 times the font size
-         and use the OS’s UI font as the website font
-       */
-    font: 100%/1.5 system-ui;
-  }
+  /* Set base font size to 100% of the default,
+     line height to 1.5, and use the system UI font */
+  font: 100%/1.5 system-ui;
+  
+  /* Constrain content width to about 100 characters,
+     and center it horizontally with a minimum margin of 1em */
+  max-width: 100ch;
+  margin-inline: max(1em, (100% - 100ch) / 2);
+  
+  /* Add padding so that the text never touches the viewport edges */
+  padding: 1em;
+  
+  /* Enable accent colors for form elements, etc. */
+  accent-color: var(--color-accent);
+}
+
+/* Navigation Styling */
+
+/* Make the UL and LI elements "disappear" in terms of layout/styling */
+nav ul,
+nav li {
+  display: contents;
+}
+
+/* Enable Flexbox on the navigation container */
+nav {
+  display: flex;
+  
+  /* Separate navigation from the content below */
+  margin-bottom: 1em;
+  
+  /* Add a subtle bottom border with the given cool gray */
+  border-bottom: 1px solid oklch(80% 3% 200);
+}
+
+/* Style the navigation links */
+nav a {
+  /* Distribute space equally among nav links */
+  flex: 1;
+  
+  /* Remove underlines and default link color */
+  text-decoration: none;
+  color: inherit;
+  
+  /* Center the text within each link */
+  text-align: center;
+  
+  /* Provide some spacing inside the links */
+  padding: 0.5em;
+  
+  /* Smooth transition for interactive styles */
+  transition: border-bottom 0.3s, background-color 0.3s;
+}
+
+/* Style for the current page link */
+nav a.current {
+  /* Give it a thicker bottom border to highlight the current page */
+  border-bottom: 0.4em solid oklch(80% 3% 200);
+  
+  /* Reduce bottom padding so the added border doesn't push out content */
+  padding-bottom: 0.1em;
+}
+
+/* Hover styles for navigation links (excluding the current page) */
+nav a:hover:not(.current) {
+  /* Apply a thick border using the accent color on hover */
+  border-bottom: 0.4em solid var(--color-accent);
+  
+  /* Optionally, add a light background accent using the same hue */
+  background-color: oklch(from var(--color-accent) 95% 5% h);
+}
+
+/* Ensure all form controls use the same font as the rest of the page */
+form input,
+form textarea,
+form button {
+  font: inherit;
+}
+
+/* Contact Form Layout using CSS Grid */
+form {
+  display: grid;
+  /* Create two columns: the first sized automatically by its content, and the second taking the remaining space */
+  grid-template-columns: auto 1fr;
+  /* Add spacing between grid items */
+  gap: 1em;
+}
+
+/* For each label:
+   - Make it a grid container whose grid tracks come from the parent grid,
+     using the experimental subgrid feature.
+   - Force the label to span both columns so that its text and input appear together on the same row.
+*/
+form label {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: 1 / -1;
+}
+
+/* Force the submit button (or any button) to span the full width */
+form button {
+  grid-column: 1 / -1;
+}
