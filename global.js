@@ -7,7 +7,7 @@ function $$(selector, context = document) {
 // Determine base path depending on whether we're local or on GitHub Pages
 const BASE_PATH = (location.hostname === "localhost" || location.hostname === "127.0.0.1")
   ? "/"
-  : "/website/";  // Replace "/website/" with your GitHub repo name if needed
+  : "/portfolio/";
 
 // Pages to add to nav
 let pages = [
