@@ -108,3 +108,19 @@ label.color-scheme {
 input, textarea, button, select {
   font: inherit;
 }
+
+.github-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5em;
+}
+
+.github-grid dt {
+  font-weight: bold;
+  grid-row: 1;
+}
+
+.github-grid dd {
+  grid-row: 2;
+}
+
