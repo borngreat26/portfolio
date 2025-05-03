@@ -70,7 +70,7 @@ function renderPieChart(projectsGiven) {
         });
 
         renderProjects(visible, projectsContainer, 'h2');
-        renderPieChart(visible);
+        renderPieChart(allProjects);
       });
   });
 }
