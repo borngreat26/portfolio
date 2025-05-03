@@ -109,12 +109,14 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
     article.innerHTML = `
       <${headingLevel}>${project.title}</${headingLevel}>
       <img src="${project.image || ''}" alt="${project.title || 'Project image'}">
-      <p>${project.description || ''}</p>
+      <div>
+        <p>${project.description || ''}</p>
+        <p class="project-year">${project.year || ''}</p>
+      </div>
     `;
     containerElement.appendChild(article);
   });
 
-  // Optionally handle empty array
   if (projects.length === 0) {
     containerElement.innerHTML = '<p>No projects available at the moment.</p>';
   }
