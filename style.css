@@ -34,7 +34,9 @@ nav a {
   color: inherit;
   text-align: center;
   padding: 0.5em;
-  transition: border-bottom 0.3s, background-color 0.3s;
+  transition:
+    border-bottom 0.3s,
+    background-color 0.3s;
 }
 
 nav a.current {
@@ -90,7 +92,12 @@ h1 {
   font-size: 400%;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   line-height: 1.1;
   text-wrap: balance;
 }
@@ -105,7 +112,10 @@ label.color-scheme {
 }
 
 /* Apply form font styles consistently */
-input, textarea, button, select {
+input,
+textarea,
+button,
+select {
   font: inherit;
 }
 
@@ -182,7 +192,6 @@ path {
   cursor: pointer;
 }
 
-
 .selected {
   --color: oklch(60% 45% 0) !important;
 }
@@ -195,9 +204,3 @@ path.selected {
   outline: 2px solid var(--color);
   outline-offset: 2px;
 }
-
-
-
-
-
-

@@ -1,75 +1,74 @@
 [
-    {
-      "title": "League of Legends Vision Score Data Analysis",
-      "year": "2025",
-      "image": "https://dsc106.com/labs/lab02/images/empty.svg",
-      "description": "Analyzed 1M+ professional games to evaluate how vision score influences competitive success in League of Legends. Used univariate and bivariate analysis, hypothesis testing, and predictive modeling to assess vision metrics."
-    },
-    {
-      "title": "Project 1: Expository Visualization – Grocery Store Foods",
-      "year": "2025",
-      "image": "https://dsc106.com/labs/lab02/images/empty.svg",
-      "description": "Designed a static visualization communicating insights about food processing across Walmart, Target, and Whole Foods. Used data transformation and visual design rationale to argue a focused takeaway."
-    },
-    {
-      "title": "Project 2: Persuasive/Deceptive Visualization",
-      "year": "2025",
-      "image": "https://dsc106.com/labs/lab02/images/empty.svg",
-      "description": "Created opposing visual narratives using a controversial dataset to explore the ethical line between persuasive and deceptive design. Included annotation, transformation, and rationale in a deployed HTML report."
-    },
-    {
-      "title": "Taylor Swift Song Recommender",
-      "year": "2023",
-      "image": "https://dsc106.com/labs/lab02/images/empty.svg",
-      "description": "Developed a music recommendation tool using Python and Spotify data. Featured keyword analysis and dynamic filtering by song attributes."
-    },
-    {
-      "title": "Bluetooth Speaker From Scratch",
-      "year": "2024",
-      "image": "https://dsc106.com/labs/lab02/images/empty.svg",
-      "description": "Built a custom Bluetooth speaker including PCB soldering, enclosure design via laser cutting, and troubleshooting electronics collaboratively."
-    },
-    {
-      "title": "Kaggle Jane Street Market Prediction",
-      "year": "2024",
-      "image": "https://dsc106.com/labs/lab02/images/empty.svg",
-      "description": "Worked with real-time financial data to develop predictive models. Applied feature engineering and tuned ML algorithms using Pandas and NumPy."
-    },
-    {
-      "title": "Data Structures Visualizer",
-      "year": "2023",
-      "image": "https://dsc106.com/labs/lab02/images/empty.svg",
-      "description": "Created an interactive web app that visualizes stack, queue, and tree operations to help students understand data structures."
-    },
-    {
-      "title": "NeuroTech Brain Map Interface",
-      "year": "2025",
-      "image": "https://dsc106.com/labs/lab02/images/empty.svg",
-      "description": "Collaborated with Voytek Lab to build a web tool using PyCortex for visualizing brain regions from multi-modal brain maps."
-    },
-    {
-      "title": "Food Processing Bias Report",
-      "year": "2025",
-      "image": "https://dsc106.com/labs/lab02/images/empty.svg",
-      "description": "Investigated bias in ultra-processed food listings across retailers using NOVA classification. Visualized pricing vs. nutritional quality trends."
-    },
-    {
-      "title": "Chess Endgame Classifier",
-      "year": "2024",
-      "image": "https://dsc106.com/labs/lab02/images/empty.svg",
-      "description": "Built a classifier that predicts endgame outcomes using FEN notation and board state features."
-    },
-    {
-      "title": "Resume Website Portfolio",
-      "year": "2025",
-      "image": "https://dsc106.com/labs/lab02/images/empty.svg",
-      "description": "Designed and deployed a personal portfolio site using templated HTML, CSS Grid, and JS data loading from JSON."
-    },
-    {
-      "title": "Fictional Data Storytelling Project",
-      "year": "2022",
-      "image": "https://dsc106.com/labs/lab02/images/empty.svg",
-      "description": "Created a fictional dataset and told a visual story using statistical design to engage and inform through an interactive notebook."
-    }
-  ]
-  
+  {
+    "title": "League of Legends Vision Score Data Analysis",
+    "year": "2025",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Analyzed 1M+ professional games to evaluate how vision score influences competitive success in League of Legends. Used univariate and bivariate analysis, hypothesis testing, and predictive modeling to assess vision metrics."
+  },
+  {
+    "title": "Project 1: Expository Visualization – Grocery Store Foods",
+    "year": "2025",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Designed a static visualization communicating insights about food processing across Walmart, Target, and Whole Foods. Used data transformation and visual design rationale to argue a focused takeaway."
+  },
+  {
+    "title": "Project 2: Persuasive/Deceptive Visualization",
+    "year": "2025",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Created opposing visual narratives using a controversial dataset to explore the ethical line between persuasive and deceptive design. Included annotation, transformation, and rationale in a deployed HTML report."
+  },
+  {
+    "title": "Taylor Swift Song Recommender",
+    "year": "2023",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Developed a music recommendation tool using Python and Spotify data. Featured keyword analysis and dynamic filtering by song attributes."
+  },
+  {
+    "title": "Bluetooth Speaker From Scratch",
+    "year": "2024",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Built a custom Bluetooth speaker including PCB soldering, enclosure design via laser cutting, and troubleshooting electronics collaboratively."
+  },
+  {
+    "title": "Kaggle Jane Street Market Prediction",
+    "year": "2024",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Worked with real-time financial data to develop predictive models. Applied feature engineering and tuned ML algorithms using Pandas and NumPy."
+  },
+  {
+    "title": "Data Structures Visualizer",
+    "year": "2023",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Created an interactive web app that visualizes stack, queue, and tree operations to help students understand data structures."
+  },
+  {
+    "title": "NeuroTech Brain Map Interface",
+    "year": "2025",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Collaborated with Voytek Lab to build a web tool using PyCortex for visualizing brain regions from multi-modal brain maps."
+  },
+  {
+    "title": "Food Processing Bias Report",
+    "year": "2025",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Investigated bias in ultra-processed food listings across retailers using NOVA classification. Visualized pricing vs. nutritional quality trends."
+  },
+  {
+    "title": "Chess Endgame Classifier",
+    "year": "2024",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Built a classifier that predicts endgame outcomes using FEN notation and board state features."
+  },
+  {
+    "title": "Resume Website Portfolio",
+    "year": "2025",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Designed and deployed a personal portfolio site using templated HTML, CSS Grid, and JS data loading from JSON."
+  },
+  {
+    "title": "Fictional Data Storytelling Project",
+    "year": "2022",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Created a fictional dataset and told a visual story using statistical design to engage and inform through an interactive notebook."
+  }
+]

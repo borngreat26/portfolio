@@ -1,19 +1,19 @@
-import { fetchJSON, renderProjects, fetchGitHubData } from './global.js';
+import { fetchJSON, renderProjects, fetchGitHubData } from "./global.js";
 
-const projectsContainer = document.querySelector('.projects');
-const heading = document.createElement('h2');
-heading.textContent = 'Latest Projects';
+const projectsContainer = document.querySelector(".projects");
+const heading = document.createElement("h2");
+heading.textContent = "Latest Projects";
 projectsContainer?.before(heading);
 
 // Fetch and display latest 3 projects
-const projects = await fetchJSON('./lib/projects.json');
+const projects = await fetchJSON("./lib/projects.json");
 const latestProjects = projects.slice(0, 3);
-renderProjects(latestProjects, projectsContainer, 'h3');
+renderProjects(latestProjects, projectsContainer, "h3");
 
 // GitHub stats
-const profileStats = document.querySelector('#profile-stats');
+const profileStats = document.querySelector("#profile-stats");
 
-const githubData = await fetchGitHubData('borngreat26'); // replace with your GitHub username
+const githubData = await fetchGitHubData("borngreat26"); // replace with your GitHub username
 if (profileStats && githubData) {
   profileStats.innerHTML = `
     <h2>GitHub Stats</h2>
@@ -25,4 +25,3 @@ if (profileStats && githubData) {
     </dl>
   `;
 }
-
