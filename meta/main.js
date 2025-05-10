@@ -209,7 +209,7 @@ function renderScatterPlot(data, allCommits) {
     .attr("cy", (d) => yScale(d.hourFrac))
     .attr("r", (d) => rScale(d.totalLines))
     .attr("fill", "steelblue")
-    .style("fill-opacity", 0.7)
+    .attr("fill-opacity", 0.6)
     .on("mouseenter", (event, d) => {
       d3.select(event.currentTarget).style("fill-opacity", 1);
       renderTooltipContent(d);
