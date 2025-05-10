@@ -224,7 +224,7 @@ function renderScatterPlot(data, allCommits) {
 }
 
 // Initial load + render
-//comit
+//
 const data = await loadData();
 const commitData = processCommits(data);
 renderCommitInfo(data, commitData);
