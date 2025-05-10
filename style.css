@@ -204,3 +204,95 @@ path.selected {
   outline: 2px solid var(--color);
   outline-offset: 2px;
 }
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8em, 1fr));
+  gap: 1em 2em;
+  margin-block: 2em;
+  text-align: center;
+}
+
+.stats dt {
+  font-weight: bold;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.stats dd {
+  font-size: 1.8rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.gridlines line {
+  stroke: #ccc;
+  stroke-opacity: 0.5;
+  shape-rendering: crispEdges;
+}
+
+.gridlines path {
+  display: none;
+}
+
+.tooltip {
+  position: fixed;
+  background: #222; /* Dark background */
+  color: #fff; /* Light text */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  border-radius: 0.5em;
+  padding: 1em;
+  font-size: 0.9rem;
+  max-width: 300px;
+  z-index: 999;
+  pointer-events: none;
+  backdrop-filter: blur(4px);
+}
+
+.tooltip a {
+  color: #6cf; /* Bright blue link for visibility */
+  text-decoration: underline;
+}
+
+dl.info {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.3em 1em;
+  margin: 0;
+  opacity: 1;
+  transition: opacity 300ms ease;
+}
+
+dl.info[hidden] {
+  opacity: 0;
+  visibility: hidden;
+}
+
+circle {
+  transition: 200ms;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+circle:hover {
+  transform: scale(1.5);
+}
+
+.selection {
+  fill-opacity: 0.1;
+  stroke: black;
+  stroke-opacity: 0.7;
+  stroke-dasharray: 5 3;
+  animation: marching-ants 2s linear infinite;
+}
+
+@keyframes marching-ants {
+  to {
+    stroke-dashoffset: -8;
+  }
+}
+
+circle.selected {
+  fill: #ff6b6b;
+}
