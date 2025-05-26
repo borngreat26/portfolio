@@ -1,29 +1,127 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projects</title>
-    <!-- Updated stylesheet link -->
-    <link rel="stylesheet" href="../style.css" />
-  </head>
-  <body>
-    <h1 class="projects-title">Projects</h1>
-    <div class="chart-container">
-      <svg id="projects-pie-plot" viewBox="-50 -50 100 100">
-        <circle cx="0" cy="0" r="50" fill="red" />
-      </svg>
-      <ul class="legend"></ul>
-    </div>
-    <input
-      class="searchBar"
-      type="search"
-      aria-label="Search projects"
-      placeholder="🔍 Search projects…"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <h1 class="projects-title">Projects</h1>
 
-    <div class="projects"></div>
-    <script type="module" src="../global.js"></script>
-    <script type="module" src="projects.js"></script>
-  </body>
+  <div class="chart-container">
+    <svg id="projects-pie-plot" viewBox="-50 -50 100 100">
+      <circle cx="0" cy="0" r="50" fill="red" />
+    </svg>
+    <ul class="legend"></ul>
+  </div>
+
+  <input
+    class="searchBar"
+    type="search"
+    aria-label="Search projects"
+    placeholder="🔍 Search projects…"
+  />
+
+  <!-- where cards go -->
+  <div class="projects"></div>
+
+  <!-- project‐card template -->
+  <template id="project-template">
+    <div class="project-card">
+      <!-- the <a> will only get its href set if url exists -->
+      <a>
+        <img src="" alt="">
+        <h3><span class="title"></span> <small class="year"></small></h3>
+        <p class="description"></p>
+      </a>
+    </div>
+  </template>
+
+  <!-- inline script to load + render -->
+  <script type="module">
+    import { fetchJSON } from "../global.js";
+    import { renderPieChart } from "./projects.js";   // reuse your pie‐chart fn
+    import { renderProjects as noop } from "../global.js"; // we won’t use this
+
+    const projectsContainer = document.querySelector(".projects");
+    const titleElement       = document.querySelector(".projects-title");
+    const searchInput        = document.querySelector(".searchBar");
+    const template           = document.getElementById("project-template");
+
+    let allProjects = [];
+    let filtered    = [];
+    let selectedIdx = -1;
+
+    // 1️⃣ Fetch + initialize
+    fetchJSON("../lib/projects.json").then(projects => {
+      allProjects = projects;
+      filtered    = projects;
+      titleElement.textContent += ` (${projects.length})`;
+      renderAll();
+      renderPieChart(allProjects);
+    });
+
+    // 2️⃣ Render loop
+    function renderAll() {
+      projectsContainer.innerHTML = "";
+      filtered.forEach(p => {
+        const clone = template.content.cloneNode(true);
+        const link  = clone.querySelector("a");
+        // show or hide link
+        if (p.url) {
+          link.href   = p.url;
+          link.target = "_blank";
+        } else {
+          // no url → unwrap children
+          const card = clone.querySelector(".project-card");
+          card.innerHTML = link.innerHTML;
+        }
+        // fill in content
+        clone.querySelector("img").src  = p.image;
+        clone.querySelector("img").alt  = p.title;
+        clone.querySelector(".title").textContent       = p.title;
+        clone.querySelector(".year").textContent        = `(${p.year})`;
+        clone.querySelector(".description").textContent = p.description;
+        projectsContainer.appendChild(clone);
+      });
+    }
+
+    // 3️⃣ Wire up search
+    searchInput.addEventListener("input", e => {
+      const q = e.target.value.toLowerCase();
+      filtered = allProjects.filter(p => {
+        const textMatch = Object.values(p)
+          .join(" ")
+          .toLowerCase()
+          .includes(q);
+        const yearMatch = selectedIdx === -1
+          || p.year === getSelectedYear();
+        return textMatch && yearMatch;
+      });
+      renderAll();
+      renderPieChart(filtered);
+    });
+
+    // 4️⃣ Expose for pie clicks
+    window.__updateFromPie = (newFilter, idx) => {
+      filtered    = newFilter;
+      selectedIdx = idx;
+      renderAll();
+    };
+
+    function getSelectedYear() {
+      const rolled = d3.rollups(
+        allProjects,
+        v => v.length,
+        d => d.year
+      );
+      const data = rolled.map(([year, count]) => ({ label: year, value: count }));
+      return selectedIdx !== -1 ? data[selectedIdx].label : null;
+    }
+  </script>
+
+  <!-- keep your existing pie-chart/filter file -->
+  <script type="module" src="projects.js"></script>
+</body>
 </html>
